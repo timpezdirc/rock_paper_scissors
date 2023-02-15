@@ -6,25 +6,39 @@ function getComputerChoice(choice) {
 function checkWhoWon(playerChoice, computerChoice) {
     if(playerChoice.toLowerCase() === "rock" && computerChoice.toLowerCase() === "scissors") {
         playerScore++;
-        return "You win! Rock beats scissors!";
+        let result = createTextNode('You win! Rock beats scissors!');
+        displayScore(result);
     } else if(playerChoice.toLowerCase() === "rock" && computerChoice.toLowerCase() === "paper") {
         computerScore++;
-        return "You lose! Paper beats rock!";
+        let result = createTextNode('You lose! Paper beats rock!');
+        displayScore(result);
     } else if(playerChoice.toLowerCase() === "paper" && computerChoice.toLowerCase() === "scissors") {
         computerScore++;
-        return "You lose! Scissors beat paper!";
+        let result = createTextNode('You lose! Scissors beat paper!');
+        displayScore(result);
     } else if(playerChoice.toLowerCase() === "paper" && computerChoice.toLowerCase() === "rock") {
         playerScore++;
-        return "You win! Paper beats rock!";
+        let result = createTextNode('You win! Paper beats rock!');
+        displayScore(result);
     } else if(playerChoice.toLowerCase() === "scissors" && computerChoice.toLowerCase() === "rock") {
         computerScore++;
-        return "You lose! Rock beats scissors!";
+        let result = createTextNode('You lose! Rock beats scissors!');
+        displayScore(result);
     } else if(playerChoice.toLowerCase() === "scissors" && computerChoice.toLowerCase() === "paper") {
         playerScore++;
-        return "You win! Scissors beat paper;"
+        let result = createTextNode('You Win! Scissors beat paper!');
+        displayScore(result);
     } else {
-        return "Draw!";
+        let result = createTextNode('Draw!');
+        displayScore(result);
     }
+}
+
+function displayScore(result) {
+    let parent = document.querySelector('.container');
+    let child = document.createElement('div');
+    child.appendChild(result);
+    parent.appendChild(child);
 }
 
 const choices = ["Rock", "Paper", "Scissors"];
