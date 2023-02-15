@@ -21,11 +21,11 @@ h1 {
 }
 
 button {
-    height: 125px;
-    width: 125px;
+    height: 200px;
+    width: 200px;
 }
 
-.player-choice, .computer-choice {
+.player-choice {
     display: flex;
     justify-content: space-between;
     gap: 24px;
